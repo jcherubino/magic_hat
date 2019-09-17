@@ -1,0 +1,28 @@
+#include "ros/ros.h"
+#include "magic_hat/TurtleInfo.h"
+
+//callback function called when a message is published on the topic hattopic 
+//this function checks if the quality of the turtle is >= to 7 and if so it is 'displayed' to my//friend
+//passes a const pointer to the callback which avoids doing a copy
+void magicHatCallback(const magic_hat::TurtleInfo::ConstPtr& msg)
+{
+	if (msg->quality >= 7)
+	{
+		ROS_INFO("I want to show turtle [%lu] to my friend because it has quality [%u]", msg->index, msg->quality);
+	}
+}
+
+//main function initialises a ros node and subscribes to hattopic
+int main(int argc, char **argv)
+{
+	ros::init(argc, argv, "subscriber");
+
+	ros::NodeHandle n;
+
+	ros::Subscriber sub = n.subscribe("hattopic", 1000, magicHatCallback);
+
+	//ros::spin() enters a loop which calls the callback function as messages are recieved and will exit when shutdown is called
+	ros::spin();
+
+	return 0;
+}
