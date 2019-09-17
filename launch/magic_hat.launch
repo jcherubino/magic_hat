@@ -1,0 +1,7 @@
+<launch>
+
+	<node pkg="magic_hat" name="hat" type="hat.py"/>
+	
+	<node pkg="magic_hat" name="subscriber" type="subscriber"/>
+
+</launch>
