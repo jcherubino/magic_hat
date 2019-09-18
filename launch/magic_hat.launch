@@ -2,6 +2,6 @@
 
 	<node pkg="magic_hat" name="hat" type="hat.py"/>
 	
-	<node pkg="magic_hat" name="subscriber" type="subscriber"/>
+	<node pkg="magic_hat" name="subscriber" type="subscriber" output="screen"/>
 
 </launch>
