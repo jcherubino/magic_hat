@@ -5,11 +5,8 @@
  *
  * Purpose: Help filter the output of the magic hat so that only high quality turtles are displayed
  *
- * Subscribed topic/s:
+ * Subscribed topic:
  * 	/magic_hat/hat_output
- *
- * Published topic/s:
- *
  */
 
 #include "ros/ros.h"

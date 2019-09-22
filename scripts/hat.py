@@ -6,9 +6,8 @@ Date Last Updated: 22/9/19 by Josh Cherubino
 
 Purpose: Publish the output of the magic hat so that the corresponding subscriber node can determine whether to display the turtles
 
-Subscribed topic/s:
 
-Published topics/s:
+Published topics:
     /magic_hat/hat_output
 
 '''
@@ -29,7 +28,6 @@ def magic_hat():
     while not rospy.is_shutdown():
         msg.quality = randint(1, 10)
         msg.index = counter
-        rospy.loginfo(msg)
         pub.publish(msg)
         counter += 1
         rate.sleep()
